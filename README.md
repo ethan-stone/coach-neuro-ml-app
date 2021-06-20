@@ -1,6 +1,10 @@
 # Building Image
 
-docker build -t coach-neuro-ml-app:"version"
+docker build -t coach-neuro-ml-app:"version" .
+
+# Run Image
+
+docker run "image id" -p 5000:8000
 
 # Tag Image
 

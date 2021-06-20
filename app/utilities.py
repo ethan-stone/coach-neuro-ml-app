@@ -84,10 +84,10 @@ def get_poses_from_video(video_download_path):
     ret, frame = video_cap.read()
     height, width, ch = frame.shape
     
-    output_path = "tmp/videos/output-videos/" + generate() + ".MOV"
+    output_path = "tmp/videos/output-videos/" + generate() + ".mp4"
     ffmpeg = "ffmpeg"
     dimension = f"{width}x{height}"
-    f_format = "bgr24"
+    f_format = "yuv420p"
     fps = str(video_cap.get(cv2.CAP_PROP_FPS))
 
     command = [ffmpeg, "-y", "-f", "rawvideo", "-vcodec", "rawvideo", "-s", dimension, "-pix_fmt", f_format, "-r", fps, "-i", "-", "-an", "-vcodec", "mpeg4", "-b:v", "5000k", output_path]

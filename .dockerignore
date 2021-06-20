@@ -1,1 +1,5 @@
 /venv
+__pycahce__
+*.pyc
+*.pyo
+*.pyd
